@@ -3,6 +3,7 @@
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <button @click="fetchData">点击获取数据</button>
     </nav>
     <router-view/>
   </div>
@@ -30,3 +31,23 @@ nav {
   }
 }
 </style>
+<script>
+
+export default {
+  data () {
+    return {
+      message: ''
+    }
+  },
+  methods: {
+    async fetchData () {
+      try {
+        const response = await this.$axios.get('/api/testJob')
+        this.message = response.data.message
+      } catch (error) {
+        console.error('Error fetching data:', error)
+      }
+    }
+  }
+}
+</script>
