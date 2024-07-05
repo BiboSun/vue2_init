@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 //import HomeView from '../views/HomeView.vue'
 import HelloWordView from '../components/HelloWorld.vue'
 import LoginView from '../components/Login.vue'
+import RegisterView from '../components/Register.vue'
 
 Vue.use(VueRouter)
 
@@ -11,6 +12,11 @@ const routes = [
     path: '/',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: RegisterView
   },
   {
     path: '/helloWord',
